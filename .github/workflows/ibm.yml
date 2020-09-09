@@ -26,6 +26,7 @@ jobs:
         $IBM_ACCOUNT
         $REGION_NUM
         no
+        1
         EOF
     - name: Target IBM Cloud
       env:
