@@ -29,11 +29,12 @@ jobs:
         EOF
     - name: Target IBM Cloud
       env:
-        RESOURSE_ID: ${{ secrets.RESOURSE_ID }}
+        RESOURCE_ID: ${{ secrets.RESOURCE_ID }}
+        CF_INSTANCE_ID: ${{ secretes.CF_INSTANCE_ID }}
       run: |
-        ./IBM_Cloud_CLI/ibmcloud target -g "$RESOURSE_ID"
+        ./IBM_Cloud_CLI/ibmcloud target -g "$RESOURCE_ID"
         ./IBM_Cloud_CLI/ibmcloud target --cf <<EOF
-        1
+        $CF_INSTANCE_ID
         EOF
         ./IBM_Cloud_CLI/ibmcloud cf install -f -v 6.15.0
     - name: Restart IBM Cloud
