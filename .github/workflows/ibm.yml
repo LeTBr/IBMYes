@@ -30,7 +30,7 @@ jobs:
     - name: Target IBM Cloud
       env:
         RESOURCE_ID: ${{ secrets.RESOURCE_ID }}
-        CF_INSTANCE_ID: ${{ secretes.CF_INSTANCE_ID }}
+        CF_INSTANCE_ID: ${{ secrets.CF_INSTANCE_ID }}
       run: |
         ./IBM_Cloud_CLI/ibmcloud target -g "$RESOURCE_ID"
         ./IBM_Cloud_CLI/ibmcloud target --cf <<EOF
